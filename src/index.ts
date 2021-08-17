@@ -1,17 +1,20 @@
-const digit = ['нэг', 'хоёр', 'гурав', 'дөрөв', 'тав', 'зургаа', 'долоо', 'найм', 'ес', 'тэг']
+import {
+  digit,
+  digitPrefix,
+  oneVariant,
+  tents,
+  tentPrefix,
+  tenPowers,
+  tenPowersPrefix,
+  suffixIin,
+  suffixN,
+  suffixDahi,
+  suffixDugaar,
+  latinText,
+  WordTransformation
+} from './number_texts'
 
-const digitPrefix = ['нэг', 'хоёр', 'гурван', 'дөрвөн', 'таван', 'зургаан', 'долоон', 'найман', 'есөн']
-const oneVariant = 'нэгэн'
-
-const tents = ['арав', 'хорь', 'гуч', 'дөч', 'тавь', 'жар', 'дал', 'ная', 'ер']
-
-const tentPrefix = ['арван', 'хорин', 'гучин', 'дөчин', 'тавин', 'жаран', 'далан', 'наян', 'ерэн']
-
-const tenPowers = ['зуу', 'мянга', 'сая', 'тэр бум', 'их наяд']
-
-const tenPowersPrefix = ['зуун', 'мянган', 'сая', 'тэр бум', 'их наяд']
-
-const hundredsPrefix = (num: number) => {
+const hundredsPrefix = (num: number): string => {
   if (num < 10) {
     if (num === 0) {
       return digit[9]
@@ -39,6 +42,7 @@ const hundredsPrefix = (num: number) => {
     }
     return `${digitPrefix[base - 1]} ${tenPowersPrefix[0]} ${hundredsPrefix(remainder)}`
   }
+  return ''
 }
 
 const toText = (num: number): string => {
@@ -100,14 +104,64 @@ const toText = (num: number): string => {
       return `${hundredsPrefix(divided)} ${tenPowers[4]}`
     return `${hundredsPrefix(divided)} ${tenPowers[4]} ${toText(remainder)}`
   }
+  return ''
 }
-// for (let i = 1; i < 1000; i++)
-//   console.log(thousandsProcess(i))
+export interface MonNumOptions {
+  latin?: boolean
+  suffix?: 'iin' | 'dahi' | 'dugaar' | 'n'
+  ucFirst?: boolean
+  upperCase?: boolean
+}
 
-//41687
-//501000
-//100222
-//102222
-//101222
+export const toWords = (num: number, options?: MonNumOptions): string => {
+  if (num >= 1000_000_000_000_000) {
+    console.log('mon_num: The number exceeds the limit of 999999999999999');
+    return '';
+  }
+  let result = toText(num)
+  if (typeof options !== 'object' || !options) return result;
 
-console.log(toText(1_000_100_000_020))
+  const separated = result.split(' ')
+  if (separated.length > 0 && options.suffix) {
+    const lastWord = separated[separated.length - 1]
+    let collection: WordTransformation[] = []
+
+    if (options.suffix === 'iin') {
+      collection = suffixIin;
+    }
+    if (options.suffix === 'n') {
+      collection = suffixN;
+    }
+    if (options.suffix === 'dugaar') {
+      collection = suffixDugaar;
+    }
+    if (options.suffix === 'dahi') {
+      collection = suffixDahi;
+    }
+
+    const transformation = collection.find(suffix => suffix.word === lastWord)
+    if (transformation) {
+      separated.pop()
+      separated.push(transformation.tf)
+      result = separated.join(' ')
+    }
+  }
+  if (options.latin === true && separated.length > 0) {
+    const transformedList = separated.map(word => latinText.find(latin => latin.word === word)?.tf)
+    result = transformedList.join(' ')
+  }
+  if (options.ucFirst === true) {
+    result = result.charAt(0).toUpperCase() + result.slice(1);
+  }
+  if (options.upperCase === true) {
+    result = result.toUpperCase()
+  }
+  return result
+}
+
+console.log(`${toWords(60, { suffix: 'iin' })} талыг насалж явна даа`)
+console.log(`${toWords(60, { suffix: 'n' })} цагаан хонь`)
+
+console.log(`${toWords(3, { suffix: 'dahi' })} удаагаа туршиж үзэв`)
+console.log(`эхнэрийн урхи киноны ${toWords(89, { suffix: 'dugaar' })} ангийг толилуулж байна`)
+console.log(toWords(290, { latin: true, suffix: 'dugaar' }))

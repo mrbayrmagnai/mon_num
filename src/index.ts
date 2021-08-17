@@ -110,4 +110,4 @@ const toText = (num: number): string => {
 //102222
 //101222
 
-console.log(toText(1_234_233_113_921))
+console.log(toText(1_000_100_000_020))

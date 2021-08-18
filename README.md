@@ -3,6 +3,8 @@
 Тоог бичвэрт хөрвүүлэх javascript ийн цогц сан юм.
 typescript бүрэн дэмжинэ.
 
+## DEMO [demo](https://mrbayrmagnai.github.io/mon_num_demo)
+
 ## Install
 
 ### Node.js or Browser

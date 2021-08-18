@@ -9,3 +9,10 @@
 ```bash
 npm install mon_num
 ```
+
+## Usage
+
+```
+import { toWord } from 'mon_num'
+
+```

@@ -192,12 +192,12 @@
         "affectsGlobalScope": true
       },
       "../src/number_texts.ts": {
-        "version": "081d871ca63685075bd06e67b0c99f42070192cc71d6dd0efcfba83f611267e9",
+        "version": "a136c5c6fc5b54915b3d8f82f0717ff5588b31fd2b71a322a85023912df871fd",
         "signature": "4387c919551e5a2f9a8130c1d0cab1dd830f582aabe477434ab9e79fa2e276b9",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "cc10b76825046d247706ccb7cab031fb6d33286eb819ff86ec141dceb7ea714f",
+        "version": "ea3532c7a0dcc00e47113e64e6575e0db64fc050e1b0126a022dea2293ef78a5",
         "signature": "33b2fd59c1f5c15a36ecd11d6374c726e1c783d56a4969b66d61c5e951f99364",
         "affectsGlobalScope": false
       }

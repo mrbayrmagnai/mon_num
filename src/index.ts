@@ -162,17 +162,3 @@ export const toWords = (num: number, options?: MonNumOptions): string => {
   }
   return result
 }
-
-console.log(`${toWords(60, { suffix: 'iin' })} талыг насалж явна даа`)
-console.log(`${toWords(60, { suffix: 'n' })} цагаан хонь`)
-
-console.log(`${toWords(3, { suffix: 'dahi' })} удаагаа туршиж үзэв`)
-console.log(`эхнэрийн урхи киноны ${toWords(89, { suffix: 'dugaar' })} ангийг толилуулж байна`)
-console.log(toWords(290, { latin: true, suffix: 'dugaar' }))
-
-
-console.log(`${toWords(247)}`)
-console.log(`${toWords(24, { suffix: 'iin' })} хоёрт заасны дагуу`)
-
-
-console.log(`${toWords(234, { latin: true, suffix: 'dugaar', upperCase: true })}`)

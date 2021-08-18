@@ -36,7 +36,7 @@ exports.suffixIin = [
 ];
 exports.suffixN = [
     { word: 'тэг', tf: 'тэг' },
-    { word: 'нэг', tf: 'нэг' },
+    { word: 'нэг', tf: 'нэгэн' },
     { word: 'хоёр', tf: 'хоёр' },
     { word: 'гурав', tf: 'гурван' },
     { word: 'дөрөв', tf: 'дөрвөн' },

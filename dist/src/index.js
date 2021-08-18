@@ -117,7 +117,12 @@ const toWords = (num, options) => {
         const transformation = collection.find(suffix => suffix.word === lastWord);
         if (transformation) {
             separated.pop();
-            separated.push(transformation.tf);
+            if (options.suffix === 'n' && result === 'нэг') {
+                separated.push('нэг');
+            }
+            else {
+                separated.push(transformation.tf);
+            }
             result = separated.join(' ');
         }
     }
@@ -134,9 +139,4 @@ const toWords = (num, options) => {
     return result;
 };
 exports.toWords = toWords;
-console.log(`${exports.toWords(60, { suffix: 'iin' })} талыг насалж явна даа`);
-console.log(`${exports.toWords(60, { suffix: 'n' })} цагаан хонь`);
-console.log(`${exports.toWords(3, { suffix: 'dahi' })} удаагаа туршиж үзэв`);
-console.log(`эхнэрийн урхи киноны ${exports.toWords(89, { suffix: 'dugaar' })} ангийг толилуулж байна`);
-console.log(exports.toWords(290, { latin: true, suffix: 'dugaar' }));
 //# sourceMappingURL=index.js.map

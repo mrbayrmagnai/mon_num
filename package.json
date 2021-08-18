@@ -2,7 +2,7 @@
   "name": "mon_num",
   "version": "1.0.0",
   "description": "Тоог бичвэрт хөрвүүлэх монгол хэлний сан",
-  "main": "index.js",
+  "main": "dist/src/lib.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,8 +1,5 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "declarationMap": false,
-    "declarationDir": "./dist",
     "outDir": "./dist",
     "composite": true,
     "target": "es6",

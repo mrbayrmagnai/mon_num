@@ -3,7 +3,7 @@
 Тоог бичвэрт хөрвүүлэх javascript ийн цогц сан юм.
 typescript бүрэн дэмжинэ.
 
-## DEMO [demo](https://mrbayrmagnai.github.io/mon_num_demo)
+### [DEMO](https://mrbayrmagnai.github.io/mon_num_demo) (үндсэн ажиллагааг харуулсан үзүүлэн)
 
 ## Install
 

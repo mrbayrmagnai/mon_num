@@ -12,7 +12,7 @@ npm install mon_num
 
 ## Usage
 
-```
+```js
 import { toWord } from 'mon_num'
 
 ```

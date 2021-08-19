@@ -1,6 +1,6 @@
 {
   "name": "mon_num",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Тоог бичвэрт хөрвүүлэх монгол хэлний сан",
   "main": "dist/src/lib.js",
   "scripts": {

@@ -12,7 +12,7 @@ typescript бүрэн дэмжинэ.
 ```bash
 npm install mon_num
 ```
-
+[mon_num.min.js](https://raw.githubusercontent.com/mrbayrmagnai/mon_num/master/dist/src/mon_num.min.js)
 ## Usage
 
 ```js

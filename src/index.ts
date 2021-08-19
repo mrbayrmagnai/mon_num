@@ -151,7 +151,8 @@ export const toWords = (num: number, options?: MonNumOptions): string => {
     }
   }
   if (options.latin === true && separated.length > 0) {
-    const transformedList = separated.map(word => latinText.find(latin => latin.word === word)?.tf)
+    const separatedNew = result.split(' ')
+    const transformedList = separatedNew.map(word => latinText.find(latin => latin.word === word)?.tf)
     result = transformedList.join(' ')
   }
   if (options.ucFirst === true) {

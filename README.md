@@ -7,10 +7,17 @@ typescript бүрэн дэмжинэ.
 
 ## Install
 
-### Node.js or Browser
+### Node.js
 
 ```bash
 npm install mon_num
+```
+
+### Browser
+```html
+<script src="mon_num.min.js"></script>
+<script>console.log(toWords(234))</script>
+
 ```
 [mon_num.min.js](https://raw.githubusercontent.com/mrbayrmagnai/mon_num/master/dist/src/mon_num.min.js)
 ## Usage
